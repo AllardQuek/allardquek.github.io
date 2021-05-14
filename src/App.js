@@ -22,24 +22,16 @@ function App() {
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
           <Home /> 
-
           <div id="about"> <About /> </div>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
           <div id="projects"> <Projects /> </div>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-
           <div id="content"> <Content /> </div>
-          <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
         </Grid>
 
 
         {/* Button here that let's user scroll to the top */}
         <Link smooth to="#">
-          
           <Box textAlign="center">
             <EjectIcon color="secondary" fontSize="large" />
-            {/* <Button variant="contained" color="primary"> Take me to the top! </Button> */}
           </Box>
         </Link>
       </MainContentStyled>
