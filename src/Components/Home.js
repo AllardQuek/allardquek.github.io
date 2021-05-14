@@ -3,6 +3,7 @@ import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
 import YoutubeIcon from '@material-ui/icons/YouTube';
 import Particle from './Particle';
+import Button from '@material-ui/core/Button';
 
 const Home = () => {
     return (
@@ -26,6 +27,12 @@ const Home = () => {
                         <YoutubeIcon />
                     </a>
                 </div>
+
+                <Button variant="contained" color="primary"> 
+                    <a href="https://www.dropbox.com/s/4ysx9omzce6pb7o/AllardQuek_Resume.pdf?dl=0" target="_blank" rel="noopener noreferrer">
+                        View Resume
+                    </a>
+                </Button>
             </div>
         </HomeStyled>
     )

@@ -1,7 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player/youtube';
 import { MainLayout } from "../styles/Layouts";
-// import { Box, Grid } from '@material-ui/core';
+import { Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -34,8 +34,12 @@ const Content = () => {
       
     return (
         <MainLayout>
-            <h1>Youtube</h1>
+            <h1>Content</h1>
             <div className={classes.video}>
+              <Grid
+                container
+                justify="center"
+                >
               <ReactPlayer 
                   pip="true" 
                   controls="true" 
@@ -43,8 +47,8 @@ const Content = () => {
                           'https://www.youtube.com/watch?v=WGUmvtVv5Hks',
                           'https://www.youtube.com/watch?v=etloE9G64tg',]}
               />
+              </Grid>
             </div>
-            
         </MainLayout>
     )
 }

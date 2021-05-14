@@ -1,11 +1,7 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Grid, Card, CardHeader, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
-
-import clsx from 'clsx';
-import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
-import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -36,21 +32,15 @@ const useStyles = makeStyles((theme) => ({
 const ProjectCard = ({ iconComps, projectName, projectType, image,
                        description, toolsUsed, contribution }) => {
     const classes = useStyles();
-    const [expanded, setExpanded] = React.useState(false);
-
-    const handleExpandClick = () => {
-      setExpanded(!expanded);
-    };
 
     return (
-      <Grid item xs={12} sm={6} md={3}>
+      <Grid item xs={12} sm={6} md={4}>
         <Card className={classes.root} 
               variant="outlined" 
               elevation={3}>
             <CardHeader
             title={projectName}
             subheader={projectType}
-            style={{color:"red"}}
             />
             <CardMedia
             className={classes.media}
@@ -63,38 +53,18 @@ const ProjectCard = ({ iconComps, projectName, projectType, image,
             </Typography>
             </CardContent>
             <CardActions disableSpacing>
-            <IconButton aria-label="github repo">
-                <a href={iconComps.icon1[0]} target="_blank" rel="noopener noreferrer" className="icon i-gh-ramsii">
-                    {/* This will be the first icon component passed in the array of props, i.e GitHubIcon */}
-                    {iconComps.icon1[1]}  
-                </a>
-            </IconButton>
-            <IconButton aria-label="other link">
-                <a href={iconComps.icon2[0]} target="_blank" rel="noopener noreferrer" className="icon i-tele">
-                    {iconComps.icon2[1]}
-                </a>
-            </IconButton>
-            <IconButton
-                className={clsx(classes.expand, {
-                [classes.expandOpen]: expanded,
-                })}
-                onClick={handleExpandClick}
-                aria-expanded={expanded}
-                aria-label="show more"
-            >
-                <ExpandMoreIcon />
-            </IconButton>
+              <IconButton aria-label="github repo">
+                  <a href={iconComps.icon1[0]} target="_blank" rel="noopener noreferrer" className="icon i-gh-ramsii">
+                      {/* This will be the first icon component passed in the array of props, i.e GitHubIcon */}
+                      {iconComps.icon1[1]}  
+                  </a>
+              </IconButton>
+              <IconButton aria-label="other link">
+                  <a href={iconComps.icon2[0]} target="_blank" rel="noopener noreferrer" className="icon i-tele">
+                      {iconComps.icon2[1]}
+                  </a>
+              </IconButton>
             </CardActions>
-            <Collapse in={expanded} timeout="auto" unmountOnExit>
-                <CardContent>
-                    <Typography paragraph>
-                        Built with: <span> {toolsUsed} </span>
-                    </Typography> 
-                    <Typography paragraph>
-                        {contribution}
-                    </Typography>
-                </CardContent>
-            </Collapse>
         </Card>
       </Grid>
     )

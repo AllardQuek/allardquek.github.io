@@ -11,6 +11,7 @@ const About = () => {
                 <p>Interested in Web Development, Machine Learning and more!</p>
                 <p>Also interested in sports, classical music, and good food!</p>
                 <p>😀  🖥  🍗</p>
+                <p></p>
             </AboutStyled>
         </MainLayout>
     )
