@@ -1,12 +1,7 @@
 import { makeStyles } from '@material-ui/core/styles';
-import jn from '../images/jn.png'
-import git from '../images/git.png';
-import vim from '../images/vim.png';
 import ReactPlayer from 'react-player/youtube';
 import { MainLayout } from "../styles/Layouts";
-import { Box, Grid } from '@material-ui/core';
-import Slider from 'react-animated-slider';
-import 'react-animated-slider/build/horizontal.css';
+// import { Box, Grid } from '@material-ui/core';
 
 
 const useStyles = makeStyles((theme) => ({

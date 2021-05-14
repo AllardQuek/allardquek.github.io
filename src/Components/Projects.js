@@ -22,10 +22,10 @@ const Projects = () => {
                     spacing={2}
                     direction="row"
                     justify="center"
-                    alignItems="flex-start"
+                    alignItems="stretch"
                     >
 
-                    <Grid item xs={12} sm={6} md={3}>
+                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard iconComps={{
                           icon1: ["https://github.com/AllardQuek/RamsiiBot", <GithubIcon />],
                           icon2: ["https://t.me/RamsiiBot", <TelegramIcon />] , 
@@ -38,9 +38,9 @@ const Projects = () => {
                         contribution="I worked on setting up the bot, command endpoints, as well as the integration of our APIs. 
                                       I also handled the deploying of the bot onto Heroku."
                       />
-                    </Grid> 
+                    {/* </Grid>  */}
                     
-                    <Grid item xs={12} sm={6} md={3}>
+                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard iconComps={{
                           icon1: ["https://github.com/AllardQuek/EduExchange", <GithubIcon />],
                           icon2: ["https://t.me/RamsiiBot", <VisibilityIcon />]  
@@ -52,15 +52,15 @@ const Projects = () => {
                         toolsUsed="Python, JavaScript, Django"
                         contribution="Built everything from scratch!"
                       />
-                    </Grid>
+                    {/* </Grid> */}
 
-                    <Grid item xs={12} sm={6} md={3}>
+                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard 
                         iconComps={{
                           icon1: ["https://docs.google.com/presentation/d/1VblWh1uSwqG95XGz1nxdZSTrnRhW3B6Y24AV8RJGRRU/edit?usp=sharing", <SlideshowIcon />],
                           icon2: []
                         }} 
-                        projectName="Cybersecutiy"
+                        projectName="Cybersecurity"
                         projectType="Machine Learning"  
                         image={bug}  
                         description="Developed machine learning models using NLP to identify evolving malware signatures automatically."
@@ -68,7 +68,7 @@ const Projects = () => {
                         contribution="Worked with and guided two teammates to build a knowledge hub of malware, attaining 80% prediction accuracy and delivered two reports documenting research. 
                                       Please reach out to access the slides or to find out more!"
                       />
-                    </Grid>
+                    {/* </Grid> */}
                   </Grid>
             </ProjectsStyled>
         </MainLayout>

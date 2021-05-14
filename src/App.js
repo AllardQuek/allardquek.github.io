@@ -5,7 +5,6 @@ import About from './Components/About';
 import Projects from './Components/Projects';
 import Content from './Components/Content'
 import {HashLink as Link} from 'react-router-hash-link';
-import Button from '@material-ui/core/Button';
 import {Grid, Box} from '@material-ui/core';
 import EjectIcon from '@material-ui/icons/Eject';
 
@@ -22,7 +21,6 @@ function App() {
 
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
-
           <Home /> 
 
           <div id="about"> <About /> </div>

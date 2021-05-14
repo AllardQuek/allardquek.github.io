@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card, CardHeader, CardActions, CardContent, CardMedia, Typography, Icon } from '@material-ui/core';
+import { Grid, Card, CardHeader, CardActions, CardContent, CardMedia, Typography } from '@material-ui/core';
 
 import clsx from 'clsx';
 import Collapse from '@material-ui/core/Collapse';
@@ -11,6 +11,7 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: 330,
+    maxWidth: 300,
     marginTop: "1rem",
     height: "100%",
   },
@@ -42,10 +43,14 @@ const ProjectCard = ({ iconComps, projectName, projectType, image,
     };
 
     return (
-        <Card className={classes.root}>
+      <Grid item xs={12} sm={6} md={3}>
+        <Card className={classes.root} 
+              variant="outlined" 
+              elevation={3}>
             <CardHeader
             title={projectName}
             subheader={projectType}
+            style={{color:"red"}}
             />
             <CardMedia
             className={classes.media}
@@ -91,6 +96,7 @@ const ProjectCard = ({ iconComps, projectName, projectType, image,
                 </CardContent>
             </Collapse>
         </Card>
+      </Grid>
     )
 }
 
