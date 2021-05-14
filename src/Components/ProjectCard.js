@@ -6,10 +6,16 @@ import IconButton from '@material-ui/core/IconButton';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    // maxWidth: 330,
-    maxWidth: 300,
+    // maxWidth: 300,
     marginTop: "1rem",
     height: "100%",
+    borderTop: "8px solid var(--border-color)",
+    transition: "all .4s ease-in-out",
+    "&:hover": {
+      borderTop: "8px solid var(--primary-color)",
+      transform: "translateY(3px)"
+    }
+    
   },
   media: {
     height: 0,
