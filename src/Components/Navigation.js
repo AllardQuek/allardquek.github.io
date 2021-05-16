@@ -27,6 +27,7 @@ const Navigation = () => {
     )
 }
 
+
 const NavigationStyled = styled.nav`
     display: flex;
     justify-content: space-between;

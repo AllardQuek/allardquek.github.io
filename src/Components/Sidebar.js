@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 import Navigation from './Navigation';
 
+
 const Sidebar = ({navToggle}) => {
     return (
+        // If the navbar is toggled, add a class to trigger its styles
         <SidebarStyled className={`${navToggle ? 'nav-toggle': ''}`}>
             <Navigation />
         </SidebarStyled>

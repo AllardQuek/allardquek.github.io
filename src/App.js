@@ -85,7 +85,7 @@ const MainContentStyled = styled.main`
   }
 
   #content {
-    width: 80%;   // Not sure why the width is not auto set to 100%
+    width: 100%;   // Not sure why the width is not auto set to 100%
   }
 `;
 

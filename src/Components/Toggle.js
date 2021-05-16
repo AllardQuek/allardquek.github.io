@@ -30,6 +30,4 @@ const ToggleStyled = styled.button`
     }
 `;
 
-
-
 export default Toggle

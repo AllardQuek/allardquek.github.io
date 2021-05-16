@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core/styles';
-import ReactPlayer from 'react-player/youtube';
 import { MainLayout } from "../styles/Layouts";
+import ReactPlayer from 'react-player/youtube';
 
 
 const useStyles = makeStyles(() => ({
@@ -23,6 +23,7 @@ const Content = () => {
     return (
         <MainLayout>
             <h1>Content</h1>
+            {/* https://github.com/cookpete/react-player#responsive-player */}
             <div className={classes.video}>
               <ReactPlayer 
                   className={classes.player}

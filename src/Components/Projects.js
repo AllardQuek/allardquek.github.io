@@ -1,12 +1,11 @@
-import React from 'react';
 import styled from 'styled-components';
 import { Grid } from '@material-ui/core';
-import { MainLayout } from "../styles/Layouts";
-import ProjectCard from './ProjectCard';
 import GithubIcon from '@material-ui/icons/GitHub';
 import TelegramIcon from '@material-ui/icons/Telegram';
 import VisibilityIcon from '@material-ui/icons/Visibility';
 import SlideshowIcon from '@material-ui/icons/Slideshow';
+import { MainLayout } from "../styles/Layouts";
+import ProjectCard from './ProjectCard';
 import ramsay from '../images/ramsay.jpeg';
 import exchange from '../images/exchange.png'
 import bug from '../images/bug.png'
@@ -25,7 +24,6 @@ const Projects = () => {
                     alignItems="stretch"
                     >
 
-                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard iconComps={{
                           icon1: ["https://github.com/AllardQuek/RamsiiBot", <GithubIcon />],
                           icon2: ["https://t.me/RamsiiBot", <TelegramIcon />] , 
@@ -38,9 +36,7 @@ const Projects = () => {
                         contribution="I worked on setting up the bot, command endpoints, as well as the integration of our APIs. 
                                       I also handled the deploying of the bot onto Heroku."
                       />
-                    {/* </Grid>  */}
                     
-                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard iconComps={{
                           icon1: ["https://github.com/AllardQuek/EduExchange", <GithubIcon />],
                           icon2: ["https://t.me/RamsiiBot", <VisibilityIcon />]  
@@ -52,9 +48,7 @@ const Projects = () => {
                         toolsUsed="Python, JavaScript, Django"
                         contribution="Built everything from scratch!"
                       />
-                    {/* </Grid> */}
 
-                    {/* <Grid item xs={12} sm={6} md={3}> */}
                       <ProjectCard 
                         iconComps={{
                           icon1: ["https://docs.google.com/presentation/d/1VblWh1uSwqG95XGz1nxdZSTrnRhW3B6Y24AV8RJGRRU/edit?usp=sharing", <SlideshowIcon />],
@@ -68,7 +62,6 @@ const Projects = () => {
                         contribution="Worked with and guided two teammates to build a knowledge hub of malware, attaining 80% prediction accuracy and delivered two reports documenting research. 
                                       Please reach out to access the slides or to find out more!"
                       />
-                    {/* </Grid> */}
                   </Grid>
             </ProjectsStyled>
         </MainLayout>

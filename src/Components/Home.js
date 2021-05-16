@@ -2,8 +2,9 @@ import styled from 'styled-components';
 import LinkedInIcon from '@material-ui/icons/LinkedIn';
 import GithubIcon from '@material-ui/icons/GitHub';
 import YoutubeIcon from '@material-ui/icons/YouTube';
-import Particle from './Particle';
 import Button from '@material-ui/core/Button';
+import Particle from './Particle';
+
 
 const Home = () => {
     return (
@@ -37,6 +38,7 @@ const Home = () => {
         </HomeStyled>
     )
 }
+
 
 const HomeStyled =  styled.header`
     width: 100%;
