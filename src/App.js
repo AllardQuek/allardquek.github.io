@@ -17,7 +17,7 @@ function App() {
 
   useEffect(()=>{
     const localTheme = window.localStorage.getItem('theme');  // Save chosen theme in local storage
-    localTheme ? setTheme(localTheme) : setMode('dark') ;     // Default to dark mode if no theme
+    localTheme ? setTheme(localTheme) : setMode('dark-theme') ;     // Default to dark mode if no theme
   document.documentElement.className = theme;    // Apply chosen theme by setting class
   }, [theme]);                                   // https://reactjs.org/docs/hooks-effect.html
 
