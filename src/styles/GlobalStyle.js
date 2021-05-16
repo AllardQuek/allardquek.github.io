@@ -102,18 +102,21 @@ const GlobalStyle = createGlobalStyle`
         }
     }
 
+    
     // Nav Toggler
     .hamburger-menu {
         position: fixed;
         right: 1%;
         top: 2%;
-        /* display: none; */
+        display: none;
         z-index: 15;
 
         svg {
             font-size: 3rem;
+            color: var(--primary-color);
         }
     }
+
     @media screen and (max-width: 1200px) {
         .hamburger-menu {
             display: block;
@@ -122,7 +125,6 @@ const GlobalStyle = createGlobalStyle`
 
     .nav-toggle {
         transform: translateX(0);   // Previously shifted -100%, now reset to no shift in X
-        /* z-index: 20; */
     }
 `;
 
