@@ -90,6 +90,15 @@ const GlobalStyle = createGlobalStyle`
         span {
             font-size: 4rem;
             color: var(--primary-color);
+
+            // Still need to specify media query here
+            @media screen and (max-width: 502px){
+                font-size: 3rem
+            }
+        }
+
+        @media screen and (max-width: 502px){
+            font-size: 3rem
         }
     }
 

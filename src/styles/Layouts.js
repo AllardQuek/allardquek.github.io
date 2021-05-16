@@ -1,9 +1,16 @@
 import styled from 'styled-components';
 
 export const MainLayout = styled.div`
-    /* padding-left: 5rem; */
-    padding: 3rem 5rem;
+    padding: 5rem;      // Default padding between each header
     text-align: center;
+
+    // Reduce padding between large components as screen size decreases
+    @media screen and (max-width: 642px){
+        padding: 4rem;
+    }
+    @media screen and (max-width: 510px){
+        padding: 3rem;
+    }
 
     h1 {
         color: var(--white-color);
@@ -14,13 +21,4 @@ export const MainLayout = styled.div`
     p {
         margin-top: 1rem;
     }
-    /* @media screen and (max-width: 642px){
-        padding: 4rem;
-    } */
-    /* @media screen and (max-width: 510px){
-        padding: 3rem;
-    } */
-    /* @media screen and (max-width: 571px){
-        padding: 2rem .4rem;
-    } */
 `;

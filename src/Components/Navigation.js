@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import {HashLink as Link} from 'react-router-hash-link';
 import myphoto from '../images/myphoto.jpg'
 
+
 const Navigation = () => {
     return (
         <NavigationStyled>
