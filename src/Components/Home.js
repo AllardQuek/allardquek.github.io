@@ -29,7 +29,7 @@ const Home = () => {
                 </div>
 
                 <Button variant="contained" color="primary"> 
-                    <a href="https://www.dropbox.com/s/4ysx9omzce6pb7o/AllardQuek_Resume.pdf?dl=0" target="_blank" rel="noopener noreferrer">
+                    <a href="https://docs.google.com/document/d/1dORKqrQx6a5h59FPkEVlp4vp263z1UrQVIGY4ESPf1k/edit?usp=sharing" target="_blank" rel="noopener noreferrer">
                         View Resume
                     </a>
                 </Button>

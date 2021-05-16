@@ -7,7 +7,7 @@ import IconButton from '@material-ui/core/IconButton';
 const useStyles = makeStyles((theme) => ({
   root: {
     // maxWidth: 300,
-    marginTop: "1rem",
+    // marginTop: "1rem",
     height: "100%",
     borderTop: "8px solid var(--border-color)",
     transition: "all .4s ease-in-out",
@@ -15,7 +15,12 @@ const useStyles = makeStyles((theme) => ({
       borderTop: "8px solid var(--primary-color)",
       transform: "translateY(3px)"
     }
-    
+  },
+  icons: {
+    paddingBottom: "0px",
+  },
+  desc: {
+    paddingTop: "0px",
   },
   media: {
     height: 0,
@@ -53,12 +58,7 @@ const ProjectCard = ({ iconComps, projectName, projectType, image,
             image={image}
             title={projectName}
             />
-            <CardContent>
-            <Typography variant="body2" color="textSecondary" component="p">
-                {description}
-            </Typography>
-            </CardContent>
-            <CardActions disableSpacing>
+            <CardActions disableSpacing className={classes.icons}>
               <IconButton aria-label="github repo">
                   <a href={iconComps.icon1[0]} target="_blank" rel="noopener noreferrer" className="icon i-gh-ramsii">
                       {/* This will be the first icon component passed in the array of props, i.e GitHubIcon */}
@@ -71,6 +71,12 @@ const ProjectCard = ({ iconComps, projectName, projectType, image,
                   </a>
               </IconButton>
             </CardActions>
+            <CardContent>
+            <Typography className={classes.desc} variant="body2" color="textSecondary" component="p">
+                {description}
+            </Typography>
+            </CardContent>
+            
         </Card>
       </Grid>
     )

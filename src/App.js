@@ -1,14 +1,40 @@
+import { useState } from 'react';
+import { useEffect } from "react";
 import Sidebar from './Components/Sidebar';
 import Home from './Components/Home';
 import styled from 'styled-components';
 import About from './Components/About';
 import Projects from './Components/Projects';
 import Content from './Components/Content'
+import Toggle from './Components/Toggle';
 import {HashLink as Link} from 'react-router-hash-link';
 import {Grid, Box} from '@material-ui/core';
 import EjectIcon from '@material-ui/icons/Eject';
 
+
 function App() {
+  const [theme, setTheme] = useState('dark-theme');
+
+  useEffect(()=>{
+    const localTheme = window.localStorage.getItem('theme');  // Save chosen theme in local storage
+    localTheme ? setTheme(localTheme) : setMode('dark') ;     // Default to dark mode if no theme
+  document.documentElement.className = theme;    // Apply chosen theme by setting class
+  }, [theme]);                                   // https://reactjs.org/docs/hooks-effect.html
+
+  const themeToggler = () =>{
+    if(theme === 'light-theme'){
+      setMode('dark-theme');    // setTheme('dark-theme');
+    }else{
+      setMode('light-theme');
+    }
+  }
+
+  const setMode = mode => {
+    window.localStorage.setItem('theme', mode);
+    setTheme(mode);
+  }
+
+
   return (
     <div className="App">
       <head>
@@ -16,9 +42,9 @@ function App() {
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         {/* <link href="https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" /> */}
       </head>
-      <Sidebar />
-      
 
+      <Sidebar />
+      <Toggle themeToggler={themeToggler} />
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
           <Home /> 
@@ -31,7 +57,7 @@ function App() {
         {/* Button here that let's user scroll to the top */}
         <Link smooth to="#">
           <Box textAlign="center">
-            <EjectIcon color="secondary" fontSize="large" />
+            <EjectIcon color="primary" fontSize="large" />
           </Box>
         </Link>
       </MainContentStyled>
