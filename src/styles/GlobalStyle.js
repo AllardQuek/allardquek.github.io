@@ -78,9 +78,9 @@ const GlobalStyle = createGlobalStyle`
     }
 
     a {
-        transition: all 1s ease;
         font-family: inherit;
         color: inherit;
+        transition: all 1s ease;
     }
 
     h1 {
@@ -91,6 +91,29 @@ const GlobalStyle = createGlobalStyle`
             font-size: 4rem;
             color: var(--primary-color);
         }
+    }
+
+    // Nav Toggler
+    .hamburger-menu {
+        position: fixed;
+        right: 1%;
+        top: 2%;
+        /* display: none; */
+        z-index: 15;
+
+        svg {
+            font-size: 3rem;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .hamburger-menu {
+            display: block;
+        }
+    }
+
+    .nav-toggle {
+        transform: translateX(0);   // Previously shifted -100%, now reset to no shift in X
+        /* z-index: 20; */
     }
 `;
 

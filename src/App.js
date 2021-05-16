@@ -1,25 +1,28 @@
 import { useState } from 'react';
 import { useEffect } from "react";
+import styled from 'styled-components';
+import {HashLink as Link} from 'react-router-hash-link';
+import {Grid, Box, IconButton} from '@material-ui/core';
+import EjectIcon from '@material-ui/icons/Eject';
+import MenuIcon from '@material-ui/icons/Menu';
 import Sidebar from './Components/Sidebar';
 import Home from './Components/Home';
-import styled from 'styled-components';
 import About from './Components/About';
 import Projects from './Components/Projects';
 import Content from './Components/Content'
 import Toggle from './Components/Toggle';
-import {HashLink as Link} from 'react-router-hash-link';
-import {Grid, Box} from '@material-ui/core';
-import EjectIcon from '@material-ui/icons/Eject';
+
 
 
 function App() {
-  const [theme, setTheme] = useState('dark-theme');
+  const [theme, setTheme] = useState('dark-theme');             // Default dark theme
+  const [navToggle, setNavToggle] = useState(false);
 
   useEffect(()=>{
-    const localTheme = window.localStorage.getItem('theme');  // Save chosen theme in local storage
-    localTheme ? setTheme(localTheme) : setMode('dark-theme') ;     // Default to dark mode if no theme
-  document.documentElement.className = theme;    // Apply chosen theme by setting class
-  }, [theme]);                                   // https://reactjs.org/docs/hooks-effect.html
+    const localTheme = window.localStorage.getItem('theme');    // Save chosen theme in local storage
+    localTheme ? setTheme(localTheme) : setMode('dark-theme') ; // Default to dark mode if no theme
+    document.documentElement.className = theme;    // Apply chosen theme by setting class
+  }, [theme]);                                     // https://reactjs.org/docs/hooks-effect.html
 
   const themeToggler = () =>{
     if(theme === 'light-theme'){
@@ -43,8 +46,16 @@ function App() {
         {/* <link href="https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" /> */}
       </head>
 
-      <Sidebar />
+      {/* Add class to sidebar depending whether nav bar is toggled 
+       Pass as props whether the nav is toggled: true/false
+       We can't just use ternary to update the className here because the info won't be passed to the actual SideBar rendered! */}
+      <Sidebar navToggle={navToggle}/> 
       <Toggle themeToggler={themeToggler} />
+      <div className="hamburger-menu">
+        <IconButton onClick={() => setNavToggle(!navToggle)}>
+          <MenuIcon />  
+        </IconButton>
+      </div>
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
           <Home /> 
@@ -54,7 +65,7 @@ function App() {
         </Grid>
 
 
-        {/* Button here that let's user scroll to the top */}
+        {/* Button here to scroll to the top */}
         <Link smooth to="#">
           <Box textAlign="center">
             <EjectIcon color="primary" fontSize="large" />
@@ -68,6 +79,14 @@ function App() {
 const MainContentStyled = styled.main`
   position: relative;
   margin-left: 16.3rem;
+
+  @media screen and (max-width: 1200px) {
+    margin-left: 0;   // Instead of 16.3! Fill space left by sidebar
+  }
+
+  #content {
+    width: 80%;   // Not sure why the width is not auto set to 100%
+  }
 `;
 
 export default App;

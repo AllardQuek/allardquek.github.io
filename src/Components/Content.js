@@ -1,31 +1,19 @@
 import { makeStyles } from '@material-ui/core/styles';
 import ReactPlayer from 'react-player/youtube';
 import { MainLayout } from "../styles/Layouts";
-import { Grid } from '@material-ui/core';
 
 
-const useStyles = makeStyles((theme) => ({
-    root: {
-      maxWidth: 345,
-    },
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
+const useStyles = makeStyles(() => ({
     video: {
         marginTop: "1rem",
-        // marginLeft: "10rem",
-    }
+        position: "relative",
+        paddingTop: "56.25%",
+    },
+    player: {
+      position: "absolute",
+      top: 0,
+      left: 0,
+    },
   }));
 
 
@@ -36,18 +24,16 @@ const Content = () => {
         <MainLayout>
             <h1>Content</h1>
             <div className={classes.video}>
-              <Grid
-                container
-                justify="center"
-                >
               <ReactPlayer 
+                  className={classes.player}
+                  width="100%"
+                  height="100%"
                   pip="true" 
                   controls="true" 
                   url={['https://www.youtube.com/watch?v=YOLjgYDNUBk',
                           'https://www.youtube.com/watch?v=WGUmvtVv5Hks',
                           'https://www.youtube.com/watch?v=etloE9G64tg',]}
               />
-              </Grid>
             </div>
         </MainLayout>
     )
