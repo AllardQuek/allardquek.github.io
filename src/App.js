@@ -11,7 +11,7 @@ import About from './Components/About';
 import Projects from './Components/Projects';
 import Content from './Components/Content'
 import Toggle from './Components/Toggle';
-
+import { Helmet } from "react-helmet";
 
 
 function App() {
@@ -40,11 +40,14 @@ function App() {
 
   return (
     <div className="App">
-      <head>
+      <Helmet>
+        <title>Allard Quek</title>
+        <meta name="description" content="Allard's portfolio website" />
+
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
         {/* <link href="https://fonts.googleapis.com/css2?family=B612:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" /> */}
-      </head>
+      </Helmet>
 
       {/* Add class to sidebar depending whether nav bar is toggled 
        Pass as props whether the nav is toggled: true/false
