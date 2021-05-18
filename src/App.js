@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useEffect } from "react";
 import styled from 'styled-components';
+import { Helmet } from "react-helmet";
 import {HashLink as Link} from 'react-router-hash-link';
 import {Grid, Box, IconButton} from '@material-ui/core';
 import EjectIcon from '@material-ui/icons/Eject';
@@ -11,7 +12,7 @@ import About from './Components/About';
 import Projects from './Components/Projects';
 import Content from './Components/Content'
 import Toggle from './Components/Toggle';
-import { Helmet } from "react-helmet";
+import favicon from './favicon.ico';
 
 
 function App() {
@@ -43,6 +44,8 @@ function App() {
       <Helmet>
         <title>Allard Quek</title>
         <meta name="description" content="Allard's portfolio website" />
+        <link rel="canonical" href="allardquek.tech" />
+        <link rel="icon" type="image/png" href={favicon} />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />

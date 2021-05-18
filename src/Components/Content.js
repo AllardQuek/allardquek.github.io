@@ -29,8 +29,8 @@ const Content = () => {
                   className={classes.player}
                   width="100%"
                   height="100%"
-                  pip="true" 
-                  controls="true" 
+                  pip={true} 
+                  controls={true} 
                   url={['https://www.youtube.com/watch?v=YOLjgYDNUBk',
                           'https://www.youtube.com/watch?v=WGUmvtVv5Hks',
                           'https://www.youtube.com/watch?v=etloE9G64tg',]}

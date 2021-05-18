@@ -12,13 +12,13 @@ const Navigation = () => {
             <ul className="nav-items">
                 {/* HashLink with smooth scrolling! */}
                 <li className="nav-item">
-                    <Link smooth to="#about" activeClassName="active-class">About</Link>
+                    <Link smooth to="#about" activeclassname="active-class">About</Link>
                 </li>
                 <li className="nav-item">
-                    <Link smooth to="#projects" activeClassName="active-class">Projects</Link>
+                    <Link smooth to="#projects" activeclassname="active-class">Projects</Link>
                 </li>
                 <li className="nav-item">
-                    <Link smooth to="#content" activeClassName="active-class">Content</Link>
+                    <Link smooth to="#content" activeclassname="active-class">Content</Link>
                 </li>
             </ul>
             <footer className="footer">
