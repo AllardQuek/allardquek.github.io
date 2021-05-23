@@ -45,7 +45,7 @@ function App() {
         <title>Allard Quek</title>
         <meta name="description" content="Allard's portfolio website" />
         <link rel="canonical" href="allardquek.tech" />
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" type="image/x-icon" href={favicon} />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
