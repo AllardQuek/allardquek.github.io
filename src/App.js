@@ -66,7 +66,7 @@ function App() {
       </div>
       <MainContentStyled>
 
-      <div id="home"> <Home /> </div>
+      <Home />
       <div id="about"> <About /> </div>
       <div id="projects"> <Projects /> </div>
       <div id="content"> <Content /> </div>

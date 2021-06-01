@@ -8,7 +8,7 @@ const Navigation = ({showSideBar}) => {
     return (
         <NavigationStyled>
             <div className="myphoto">
-                <Link smooth to="#home" activeclassname="active-class" onClick={showSideBar}>
+                <Link smooth to="#" activeclassname="active-class" onClick={showSideBar}>
                     <img src={myphoto} alt=""/>
                 </Link>
             </div>
