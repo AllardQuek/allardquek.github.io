@@ -38,6 +38,8 @@ function App() {
     setTheme(mode);
   }
 
+  const showSideBar = () => { setNavToggle(!navToggle); }
+
 
   return (
     <div className="App">
@@ -45,7 +47,7 @@ function App() {
         <title>Allard Quek</title>
         <meta name="description" content="Allard's portfolio website" />
         <link rel="canonical" href="allardquek.tech" />
-        <link rel="icon" type="image/png" href={favicon} />
+        <link rel="icon" type="image/x-icon" href={favicon} />
 
         <link rel="preconnect" href="https://fonts.gstatic.com" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
@@ -55,16 +57,16 @@ function App() {
       {/* Add class to sidebar depending whether nav bar is toggled 
        Pass as props whether the nav is toggled: true/false
        We can't just use ternary to update the className here because the info won't be passed to the actual SideBar rendered! */}
-      <Sidebar navToggle={navToggle}/> 
+      <Sidebar navToggle={navToggle} showSideBar={showSideBar} /> 
       <Toggle themeToggler={themeToggler} />
       <div className="hamburger-menu">
-        <IconButton onClick={() => setNavToggle(!navToggle)}>
+        <IconButton onClick={showSideBar}>
           <MenuIcon />  
         </IconButton>
       </div>
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
-          <Home /> 
+          <div id="home"> <Home /> </div>
           <div id="about"> <About /> </div>
           <div id="projects"> <Projects /> </div>
           <div id="content"> <Content /> </div>

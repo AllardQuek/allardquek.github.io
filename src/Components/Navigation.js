@@ -1,25 +1,34 @@
 import styled from 'styled-components';
 import {HashLink as Link} from 'react-router-hash-link';
 import myphoto from '../images/myphoto.jpg'
+import navItems from '../data/navItems';
 
-
-const Navigation = () => {
+// Passed the showSideBar function from parent App down to child Navigation and add onClick attribute to list items
+const Navigation = ({showSideBar}) => {
     return (
         <NavigationStyled>
             <div className="myphoto">
-                <img src={myphoto} alt="" />
+                <Link smooth to="#home" activeclassname="active-class" onClick={showSideBar}>
+                    <img src={myphoto} alt=""/>
+                </Link>
             </div>
-            <ul className="nav-items">
+
+            <ul className="nav-items" onClick={showSideBar}>
                 {/* HashLink with smooth scrolling! */}
-                <li className="nav-item">
-                    <Link smooth to="#about" activeclassname="active-class">About</Link>
-                </li>
-                <li className="nav-item">
-                    <Link smooth to="#projects" activeclassname="active-class">Projects</Link>
-                </li>
-                <li className="nav-item">
-                    <Link smooth to="#content" activeclassname="active-class">Content</Link>
-                </li>
+                {navItems.map((item, index) => {
+                    return (
+                        <li key={index} className={item.className}>
+                            <Link smooth to={item.path} activeclassname="active-class">
+                                <div className="things">
+                                    {item.icon}
+                                    <span>
+                                        {item.title}
+                                    </span>
+                                </div>
+                            </Link>
+                        </li>
+                    )
+                })}                
             </ul>
             <footer className="footer">
                 <p> &#169; 2021 </p>
@@ -54,6 +63,7 @@ const NavigationStyled = styled.nav`
     .nav-items {
         width: 100%;
         text-align: center;
+        
         .active-class{
             background-color: var(--primary-color-light);
             color: white;
@@ -69,11 +79,13 @@ const NavigationStyled = styled.nav`
                 font-size: 1.1rem;
                 font-weight: 400;
                 letter-spacing: 1.2px;
+                justify-content: center;
+                align-items: center; 
 
                 &:hover {
                     cursor: pointer;
                     color: var(--white-color);
-                    
+                    transition: all 0s;     // Don't want gradual change for text color
                 }
 
                 &::before {
@@ -94,6 +106,18 @@ const NavigationStyled = styled.nav`
             a:hover::before  {
                 width: 100%;
                 height: 100%;
+            }
+
+            .things{
+                display: flex;
+                flex-direction: row-reverse;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+            }
+
+            span {
+                margin-right: 0.5rem;
             }
         }
     }
