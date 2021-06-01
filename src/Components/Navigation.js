@@ -1,25 +1,30 @@
 import styled from 'styled-components';
 import {HashLink as Link} from 'react-router-hash-link';
 import myphoto from '../images/myphoto.jpg'
+import navItems from '../data/navItems';
 
 
 const Navigation = () => {
     return (
         <NavigationStyled>
             <div className="myphoto">
-                <img src={myphoto} alt="" />
+            <Link smooth to="#home" activeclassname="active-class">
+            <img src={myphoto} alt=""/>
+
+
+            </Link>
+
             </div>
+
             <ul className="nav-items">
                 {/* HashLink with smooth scrolling! */}
-                <li className="nav-item">
-                    <Link smooth to="#about" activeclassname="active-class">About</Link>
-                </li>
-                <li className="nav-item">
-                    <Link smooth to="#projects" activeclassname="active-class">Projects</Link>
-                </li>
-                <li className="nav-item">
-                    <Link smooth to="#content" activeclassname="active-class">Content</Link>
-                </li>
+                {navItems.map((item, index) => {
+                    return (
+                        <li key={index} className={item.className}>
+                            <Link smooth to={item.path} activeclassname="active-class">{item.title}</Link>
+                        </li>
+                    )
+                })}                
             </ul>
             <footer className="footer">
                 <p> &#169; 2021 </p>

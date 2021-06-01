@@ -38,6 +38,8 @@ function App() {
     setTheme(mode);
   }
 
+  const showSideBar = () => { setNavToggle(!navToggle); }
+
 
   return (
     <div className="App">
@@ -58,13 +60,13 @@ function App() {
       <Sidebar navToggle={navToggle}/> 
       <Toggle themeToggler={themeToggler} />
       <div className="hamburger-menu">
-        <IconButton onClick={() => setNavToggle(!navToggle)}>
+        <IconButton onClick={showSideBar}>
           <MenuIcon />  
         </IconButton>
       </div>
       <MainContentStyled>
         <Grid container justify="center" alignItems="center">
-          <Home /> 
+          <div id="home"> <Home /> </div>
           <div id="about"> <About /> </div>
           <div id="projects"> <Projects /> </div>
           <div id="content"> <Content /> </div>
