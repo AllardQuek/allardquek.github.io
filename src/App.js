@@ -57,7 +57,7 @@ function App() {
       {/* Add class to sidebar depending whether nav bar is toggled 
        Pass as props whether the nav is toggled: true/false
        We can't just use ternary to update the className here because the info won't be passed to the actual SideBar rendered! */}
-      <Sidebar navToggle={navToggle}/> 
+      <Sidebar navToggle={navToggle} showSideBar={showSideBar} /> 
       <Toggle themeToggler={themeToggler} />
       <div className="hamburger-menu">
         <IconButton onClick={showSideBar}>
