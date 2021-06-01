@@ -65,14 +65,12 @@ function App() {
         </IconButton>
       </div>
       <MainContentStyled>
-        <Grid container justify="center" alignItems="center">
-          <div id="home"> <Home /> </div>
-          <div id="about"> <About /> </div>
-          <div id="projects"> <Projects /> </div>
-          <div id="content"> <Content /> </div>
-        </Grid>
 
-
+      <div id="home"> <Home /> </div>
+      <div id="about"> <About /> </div>
+      <div id="projects"> <Projects /> </div>
+      <div id="content"> <Content /> </div>
+        
         {/* Button here to scroll to the top */}
         <Link smooth to="#">
           <Box textAlign="center">
