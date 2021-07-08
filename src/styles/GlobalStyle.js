@@ -1,4 +1,4 @@
-import {createGlobalStyle} from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
@@ -127,6 +127,5 @@ const GlobalStyle = createGlobalStyle`
         transform: translateX(0);   // Previously shifted -100%, now reset to no shift in X
     }
 `;
-
 
 export default GlobalStyle;
