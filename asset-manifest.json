@@ -1,22 +1,21 @@
 {
   "files": {
-    "main.js": "/static/js/main.a1c66e4b.chunk.js",
-    "main.js.map": "/static/js/main.a1c66e4b.chunk.js.map",
+    "main.js": "/static/js/main.e5a0b4cb.chunk.js",
+    "main.js.map": "/static/js/main.e5a0b4cb.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.31f25fdc.js",
     "runtime-main.js.map": "/static/js/runtime-main.31f25fdc.js.map",
-    "static/js/2.5bcc7a97.chunk.js": "/static/js/2.5bcc7a97.chunk.js",
-    "static/js/2.5bcc7a97.chunk.js.map": "/static/js/2.5bcc7a97.chunk.js.map",
+    "static/js/2.b5bf94b9.chunk.js": "/static/js/2.b5bf94b9.chunk.js",
+    "static/js/2.b5bf94b9.chunk.js.map": "/static/js/2.b5bf94b9.chunk.js.map",
     "index.html": "/index.html",
-    "static/js/2.5bcc7a97.chunk.js.LICENSE.txt": "/static/js/2.5bcc7a97.chunk.js.LICENSE.txt",
+    "static/js/2.b5bf94b9.chunk.js.LICENSE.txt": "/static/js/2.b5bf94b9.chunk.js.LICENSE.txt",
     "static/media/bug.23570743.png": "/static/media/bug.23570743.png",
     "static/media/exchange.7e59030e.png": "/static/media/exchange.7e59030e.png",
-    "static/media/favicon.8059c410.ico": "/static/media/favicon.8059c410.ico",
     "static/media/myphoto.b8d5ff46.jpg": "/static/media/myphoto.b8d5ff46.jpg",
     "static/media/ramsay.f67ab92b.jpeg": "/static/media/ramsay.f67ab92b.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.31f25fdc.js",
-    "static/js/2.5bcc7a97.chunk.js",
-    "static/js/main.a1c66e4b.chunk.js"
+    "static/js/2.b5bf94b9.chunk.js",
+    "static/js/main.e5a0b4cb.chunk.js"
   ]
 }
