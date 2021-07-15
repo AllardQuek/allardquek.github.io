@@ -41,6 +41,7 @@ const GlobalStyle = createGlobalStyle`
         --scrollbar-thump-color: #6b6b6b;
         --scrollbar-track-color: #383838;
     }
+    
     .dark-theme{
         --primary-color: #007bff;
         --primary-color-light: #057FFF;
