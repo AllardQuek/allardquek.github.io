@@ -45,7 +45,7 @@ const Home = () => {
 
         <Button variant="contained" color="primary">
           <a
-            href="https://docs.google.com/document/d/1dORKqrQx6a5h59FPkEVlp4vp263z1UrQVIGY4ESPf1k/edit?usp=sharing"
+            href="https://docs.google.com/document/d/1U2BR7GmpglaAHrZTrZIqvrQ3AfQJAxHMK3RJ_9Q6pvw/edit?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
           >
