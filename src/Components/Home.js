@@ -45,7 +45,7 @@ const Home = () => {
 
         <Button variant="contained" color="primary">
           <a
-            href="https://docs.google.com/document/d/1_uVK1htpXvqXPwhZ9kWmppzJffcWMI93oMW_vygc7FY/edit?usp=sharing"
+            href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1KetTGTTl6cqq19rIcjMK8MrQl8DyPt9QNKaLwpfslDE/export?format=pdf"
             target="_blank"
             rel="noopener noreferrer"
           >

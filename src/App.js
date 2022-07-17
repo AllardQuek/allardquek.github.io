@@ -6,12 +6,12 @@ import { HashLink as Link } from "react-router-hash-link";
 import { Box, IconButton } from "@material-ui/core";
 import EjectIcon from "@material-ui/icons/Eject";
 import MenuIcon from "@material-ui/icons/Menu";
-import Sidebar from "./Components/Sidebar";
-import Home from "./Components/Home";
-import About from "./Components/About";
-import Projects from "./Components/Projects";
-import Content from "./Components/Content";
-import Toggle from "./Components/Toggle";
+import Sidebar from "./components/Sidebar";
+import Home from "./components/Home";
+import About from "./components/About";
+import Projects from "./components/Projects";
+import Content from "./components/Content";
+import Toggle from "./components/Toggle";
 
 function App() {
   const [theme, setTheme] = useState("dark-theme"); // Default dark theme
