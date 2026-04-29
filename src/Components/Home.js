@@ -1,8 +1,8 @@
 import styled from "styled-components";
-import LinkedInIcon from "@material-ui/icons/LinkedIn";
-import GithubIcon from "@material-ui/icons/GitHub";
-import YoutubeIcon from "@material-ui/icons/YouTube";
-import Button from "@material-ui/core/Button";
+import { LinkedIn as LinkedInIcon } from "@mui/icons-material";
+import { GitHub as GithubIcon } from "@mui/icons-material";
+import { YouTube as YoutubeIcon } from "@mui/icons-material";
+import Button from "@mui/material/Button";
 import Particle from "./Particle";
 
 const Home = () => {

@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@mui/styles";
 import { MainLayout } from "../styles/Layouts";
-import ReactPlayer from "react-player/youtube";
+import ReactPlayer from "react-player";
 
 const useStyles = makeStyles(() => ({
   video: {

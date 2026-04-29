@@ -1,6 +1,6 @@
-import InfoIcon from '@material-ui/icons/Info';
-import WorkOutlineIcon from '@material-ui/icons/WorkOutline';
-import SubscriptionsIcon from '@material-ui/icons/Subscriptions';
+import { Info as InfoIcon } from '@mui/icons-material';
+import { WorkOutlineOutlined as WorkOutlineIcon } from '@mui/icons-material';
+import { Subscriptions as SubscriptionsIcon } from '@mui/icons-material';
 
 
 const navItems = [

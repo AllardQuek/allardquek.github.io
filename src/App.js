@@ -3,9 +3,10 @@ import { useEffect } from "react";
 import styled from "styled-components";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import { HashLink as Link } from "react-router-hash-link";
-import { Box, IconButton } from "@material-ui/core";
-import EjectIcon from "@material-ui/icons/Eject";
-import MenuIcon from "@material-ui/icons/Menu";
+import { Box, IconButton, ThemeProvider, createTheme } from "@mui/material";
+import { ThemeProvider as StylesProvider } from "@mui/styles";
+import { Eject as EjectIcon } from "@mui/icons-material";
+import { Menu as MenuIcon } from "@mui/icons-material";
 import Sidebar from "./components/Sidebar";
 import Home from "./components/Home";
 import About from "./components/About";
@@ -40,9 +41,17 @@ function App() {
     setNavToggle(!navToggle);
   };
 
+  const muiTheme = createTheme({
+    palette: {
+      mode: theme === "dark-theme" ? "dark" : "light",
+    },
+  });
+
   return (
     <HelmetProvider>
-      <div className="App">
+      <ThemeProvider theme={muiTheme}>
+        <StylesProvider theme={muiTheme}>
+        <div className="App">
         <Helmet>
           <title>Allard Quek</title>
           <meta name="description" content="Allard's portfolio website" />
@@ -90,6 +99,8 @@ function App() {
           </Link>
         </MainContentStyled>
       </div>
+    </StylesProvider>
+    </ThemeProvider>
     </HelmetProvider>
   );
 }

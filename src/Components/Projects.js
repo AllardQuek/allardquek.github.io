@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import { Grid } from "@material-ui/core";
-import GithubIcon from "@material-ui/icons/GitHub";
-import TelegramIcon from "@material-ui/icons/Telegram";
-import VisibilityIcon from "@material-ui/icons/Visibility";
-import SlideshowIcon from "@material-ui/icons/Slideshow";
+import { Grid } from "@mui/material";
+import { GitHub as GithubIcon } from "@mui/icons-material";
+import { Telegram as TelegramIcon } from "@mui/icons-material";
+import { Visibility as VisibilityIcon } from "@mui/icons-material";
+import { Slideshow as SlideshowIcon } from "@mui/icons-material";
 import { MainLayout } from "../styles/Layouts";
 import ProjectCard from "./ProjectCard";
 import ramsay from "../images/ramsay.jpeg";

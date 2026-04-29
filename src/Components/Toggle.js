@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Brightness4Icon from '@material-ui/icons/Brightness4';;
+import { Brightness4 as Brightness4Icon } from '@mui/icons-material';;
 
 
 const Toggle = ({themeToggler}) => {
