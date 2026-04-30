@@ -1,33 +1,7 @@
-import styled from 'styled-components';
-import { Brightness4 as Brightness4Icon } from '@mui/icons-material';;
+import React from 'react';
 
+const Toggle = () => {
+  return null; // Legacy component no longer needed as we use the Theme Engine in Sidebar
+};
 
-const Toggle = ({themeToggler}) => {
-    return (
-        <ToggleStyled onClick={themeToggler}>
-            <Brightness4Icon />
-        </ToggleStyled>
-    )
-}
-
-const ToggleStyled = styled.button`
-    cursor: pointer;
-    border: none;
-    position: fixed;
-    right: 0;
-    top: 50%;
-    background-color: var(--background-light-color-2);
-    width: 4.5rem;
-    height: 2.5rem;
-    z-index: 15;    // If box overlaps with other components, it will still show (higher z-index)
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-        font-size: 1.7rem;
-        color: var(--white-color);
-    }
-`;
-
-export default Toggle
+export default Toggle;

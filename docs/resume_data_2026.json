@@ -1,0 +1,175 @@
+{
+  "personal": {
+    "name": "Allard Quek",
+    "contact": {
+      "phone": "+65 98353123",
+      "email": "allardqjy@gmail.com",
+      "github": "AllardQuek",
+      "linkedin": "allard-quek",
+      "youtube": "ProgrammerError"
+    },
+    "motto": "Compare yourself to who you were yesterday, not to who someone else is today."
+  },
+  "education": {
+    "institution": "National University of Singapore (NUS), NUS College",
+    "degree": "B.Comp. in Computer Science, Minor in Management",
+    "period": "Aug 2020 – May 2024",
+    "achievements": [
+      "NUS Merit Scholar",
+      "Honour Roll recipient (x2) at NUS College",
+      "NUS Overseas Colleges (NOC) programme (Technical University of Munich)",
+      "Semester programme placement at a top-ranked private research university in Ohio"
+    ]
+  },
+  "experience": [
+    {
+      "company": "Singtel",
+      "role": "Fullstack AI Engineer (Management Associate)",
+      "period": "Jul 2024 - Present",
+      "key_achievements": [
+        "Led end-to-end design of an agentic AI calling POC for GTAA (Twilio, AWS).",
+        "Managed scrum team of 10 for Spring Boot API microservices (Insurance project).",
+        "Driven data migration of 100+ Airflow/PySpark pipelines from Cloudera to HPE.",
+        "Shipped GenAI assistant with hybrid evaluation (LangChain, RAG, MCP), reducing ticket troubleshooting by 60%.",
+        "Cut annual workplace safety costs by 80% via emergency roll-call analytics.",
+        "Increased financial process efficiency by 90% using invoice extraction AI with Microsoft.",
+        "Spearheading social commerce product ($100K mandate) after pitching to 1K+ colleagues."
+      ]
+    },
+    {
+      "company": "nextnanoGmbH",
+      "location": "Munich, Germany",
+      "role": "Software and Business Developer Intern",
+      "period": "Jul 2023 - Dec 2023",
+      "key_achievements": [
+        "Optimized Python/Zoho scripts, increasing speed by 20-30%.",
+        "Architected cross-platform Azure CI/CD pipelines (YAML, PowerShell) for 350+ customers in 36 countries."
+      ]
+    },
+    {
+      "company": "OneSanta",
+      "role": "Chief Technology Officer",
+      "period": "Nov 2020 - Jul 2023",
+      "key_achievements": [
+        "Doubled gross sales through Scratch and Python course curriculum design.",
+        "Conducted weekly intro classes for local/overseas clients to improve engagement."
+      ]
+    },
+    {
+      "company": "Accenture",
+      "role": "Quality Engineering Intern",
+      "period": "Apr 2023 - Jul 2023",
+      "key_achievements": [
+        "Increased test coverage by 10% with batch job test scripts for automated/performance testing."
+      ]
+    },
+    {
+      "company": "M1 Limited",
+      "role": "Software Engineer Intern",
+      "period": "May 2022 - Aug 2022",
+      "key_achievements": [
+        "Raised analytics reports efficiency by 20% via automated reporting for 30+ datasources.",
+        "Designed high-availability cluster setup and implemented database replication."
+      ]
+    },
+    {
+      "company": "AiPalette",
+      "role": "Data Science Intern",
+      "period": "Nov 2021 - Mar 2022",
+      "key_achievements": [
+        "Predicted food trends with 70% accuracy using time-series models and ELK."
+      ]
+    },
+    {
+      "company": "Matchin",
+      "role": "Machine Learning Intern",
+      "period": "Jun 2021 - Aug 2021",
+      "key_achievements": [
+        "Built job recommendation system (70% accuracy) using TensorFlow, Pandas, NumPy."
+      ]
+    },
+    {
+      "company": "DSTA",
+      "role": "Cybersecurity ML Intern",
+      "period": "Jan 2020 - Apr 2020",
+      "key_achievements": [
+        "Automated malware signature identification (80% accuracy) using BeautifulSoup, Scrapy, BERT, ELMo."
+      ]
+    }
+  ],
+  "certifications": [
+    "AWS Certified Solutions Architect Associate (Jun 2025)",
+    "Certified Kubernetes Application Developer (CKAD) (Mar 2025)",
+    "Astronomer Certification for Apache Airflow 2 Fundamentals (Nov 2024)",
+    "Astronomer Certification DAG Authoring for Apache Airflow 2 (Nov 2024)",
+    "Deep Learning Specialization (Andrew Ng) (Feb 2022)"
+  ],
+  "awards_and_projects": [
+    {
+      "title": "UMA Bounty 3rd Prize | ETHGlobal Istanbul",
+      "date": "Nov 2023",
+      "project": "dETHLegacy",
+      "description": "Platform managing wills for digital assets."
+    },
+    {
+      "title": "First Prize | Endress+Hauser Challenge | BaselHack",
+      "date": "Oct 2023",
+      "project": "MeetingMunch",
+      "description": "Lunch match-making platform based on personal interests."
+    },
+    {
+      "title": "5-Time Bounty Prize Winner | ETHRome",
+      "date": "Oct 2023",
+      "project": "Sharknado",
+      "description": "Anonymous surveys with crypto prizes."
+    },
+    {
+      "title": "Arweave Bounty Prize | ETHWarsaw",
+      "date": "Sep 2023",
+      "project": "Magnetify",
+      "description": "Quiz-builder platform for Web3 onboarding."
+    },
+    {
+      "title": "Blockcurator GmbH Bounty Prize | ETHMunich",
+      "date": "Aug 2023",
+      "project": "Zap",
+      "description": "Multi-Coin Lightning wallet supporting non-custodial EVMs."
+    },
+    {
+      "title": "Commendation Award | Youth Action Challenge (YAC)",
+      "date": "Dec 2020 - Jan 2022",
+      "project": "NewFood",
+      "description": "Founded platform producing air-dried fruits for migrant workers."
+    },
+    {
+      "title": "1st Runner Up | NUS Computing LifeHack 2021",
+      "date": "Jul 2021",
+      "project": "MediaTE",
+      "description": "Text-to-video generator using ReactJS, ML models, and AWS."
+    },
+    {
+      "title": "Best Freshman Hack | NUS Hackers Hack&Roll 2021",
+      "date": "Jan 2021",
+      "project": "RamsiiBot",
+      "description": "Telegram bot for ingredient search automation."
+    },
+    {
+      "title": "Ideate 2020 Finalist | NUS Innovation Design Programme",
+      "date": "Aug 2020",
+      "project": "JACT",
+      "description": "AR remote collaboration solution."
+    }
+  ],
+  "skill_taxonomy": {
+    "frontend": ["JavaScript", "TypeScript", "HTML", "CSS", "React", "Next.js", "Nuxt.js"],
+    "backend": ["Python", "Java", "C++", "C", "SpringBoot", "SQL", "Flask", "Django", "NodeJS"],
+    "data": ["Python", "PySpark", "SQL", "Pandas", "Airflow", "Spark", "Dask", "NumPy", "TensorFlow", "Keras", "Elasticsearch", "Kibana"],
+    "infrastructure_ai": ["AWS", "Azure", "GCP", "VertexAI", "Docker", "Kubernetes", "LangChain", "Databricks"]
+  },
+  "leadership": [
+    "NUS Cycling | Captain",
+    "USP Track & Field | Captain",
+    "NUS Symphony Orchestra | Principal Player and Section Leader",
+    "USP Technologies Directorate | Member"
+  ]
+}

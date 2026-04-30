@@ -1,117 +1,50 @@
-import styled from "styled-components";
-import { LinkedIn as LinkedInIcon } from "@mui/icons-material";
-import { GitHub as GithubIcon } from "@mui/icons-material";
-import { YouTube as YoutubeIcon } from "@mui/icons-material";
-import Button from "@mui/material/Button";
-import Particle from "./Particle";
+import React from 'react';
+import { motion } from 'framer-motion';
+import { useTheme } from '../context/ThemeContext';
 
 const Home = () => {
-  return (
-    <HomeStyled>
-      <div className="p-particle-js">
-        <Particle />
-      </div>
-      <div className="typography">
-        <h1>
-          Hi! I'm <span>Allard.</span>
-        </h1>
-        <p>Tech-lover | Musician | Educator</p>
-        <div className="icons">
-          <a
-            href="https://www.linkedin.com/in/allard-quek/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon i-linkedin"
-          >
-            <LinkedInIcon />
-          </a>
-          <a
-            href="https://github.com/AllardQuek"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon i-github"
-          >
-            <GithubIcon />
-          </a>
-          <a
-            href="https://www.youtube.com/channel/ProgrammerError"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="icon i-youtube"
-          >
-            <YoutubeIcon />
-          </a>
-        </div>
+    const { currentTheme } = useTheme();
 
-        <Button variant="contained" color="primary">
-          <a
-            href="https://docs.google.com/viewer?url=https://docs.google.com/document/d/1KetTGTTl6cqq19rIcjMK8MrQl8DyPt9QNKaLwpfslDE/export?format=pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            View Resume
-          </a>
-        </Button>
-      </div>
-    </HomeStyled>
-  );
+    const variants = {
+        hidden: { opacity: 0, y: 20 },
+        visible: (i) => ({
+            opacity: 1,
+            y: 0,
+            transition: {
+                delay: i * 0.1,
+                duration: 0.8,
+                ease: [0.215, 0.61, 0.355, 1],
+            },
+        }),
+    };
+
+    return (
+        <section className="relative min-h-screen flex items-center justify-center overflow-hidden px-6 lg:px-20 text-center">
+            <div className="max-w-4xl z-10">
+                <motion.span 
+                    custom={0} initial="hidden" animate="visible" variants={variants}
+                    className="inline-block py-1 px-3 rounded-full border border-black/20 text-[10px] uppercase tracking-[0.2em] font-bold mb-8 bg-white/80 backdrop-blur-sm"
+                >
+                    Software Engineer • Student • Researcher
+                </motion.span>
+                
+                <motion.h1 
+                    custom={1} initial="hidden" animate="visible" variants={variants}
+                    className="text-6xl md:text-8xl font-black mb-6 tracking-tighter"
+                >
+                    Building the future of computing.
+                </motion.h1>
+
+                <motion.p 
+                    custom={2} initial="hidden" animate="visible" variants={variants}
+                    className="text-lg md:text-xl opacity-70 leading-relaxed mb-10 max-w-2xl mx-auto font-medium"
+                >
+                    Hi, I'm Allard. I specialize in building high-performance web applications, 
+                    venturing into Machine Learning and Cybersecurity at NUS.
+                </motion.p>
+            </div>
+        </section>
+    );
 };
-
-const HomeStyled = styled.header`
-  width: 100%;
-  height: 100vh;
-  position: relative;
-
-  .p-particles-js {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-
-  .typography {
-    // Be mobile responsive
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    /* width: 100%; */
-  }
-
-  .icons {
-    margin-top: 0.5rem;
-    // * Not sure if needed for mobile responsiveness
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    svg {
-      margin: 0.5rem;
-    }
-
-    .icon {
-      transition: all 0.4s ease-in-out;
-      cursor: pointer;
-    }
-
-    .i-linkedin {
-      &:hover {
-        color: #0077b5;
-      }
-    }
-
-    .i-github {
-      &:hover {
-        color: #6e5494;
-      }
-    }
-
-    .i-youtube {
-      &:hover {
-        color: #ff0000;
-      }
-    }
-  }
-`;
 
 export default Home;

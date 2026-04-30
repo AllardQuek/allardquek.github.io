@@ -1,142 +1,42 @@
-import styled from "styled-components";
-import { HashLink as Link } from "react-router-hash-link";
-import myphoto from "../images/myphoto.jpg";
-import navItems from "../data/navItems";
+import React from 'react';
+import { useTheme } from '../context/ThemeContext';
+import { HashLink as Link } from 'react-router-hash-link';
+import navItems from '../data/navItems';
 
-// Passed the showSideBar function from parent App down to child Navigation and add onClick attribute to list items
 const Navigation = ({ showSideBar }) => {
-  const currDate = new Date();
-  const year = currDate.getFullYear();
-
-  return (
-    <NavigationStyled>
-      <div className="myphoto">
-        <Link
-          smooth
-          to="#"
-          activeclassname="active-class"
-          onClick={showSideBar}
-        >
-          <img src={myphoto} alt="" />
-        </Link>
-      </div>
-
-      <ul className="nav-items" onClick={showSideBar}>
-        {/* HashLink with smooth scrolling! */}
-        {navItems.map((item, index) => {
-          return (
-            <li key={index} className={item.className}>
-              <Link smooth to={item.path} activeclassname="active-class">
-                <div className="things">
-                  {item.icon}
-                  <span>{item.title}</span>
+    return (
+        <div className="flex flex-col h-full py-8 text-black">
+            <div className="avatar px-8 mb-8 text-black">
+                <div className="w-24 h-24 rounded-full border-4 border-black/20 overflow-hidden mb-4">
+                    <img src="https://via.placeholder.com/150" alt="Avatar" className="w-full h-full object-cover" />
                 </div>
-              </Link>
-            </li>
-          );
-        })}
-      </ul>
-      <footer className="footer">
-        <p> &#169; {year} </p>
-      </footer>
-    </NavigationStyled>
-  );
+                <h1 className="text-xl font-bold tracking-tight">Allard Quek</h1>
+                <p className="text-sm opacity-60">NUS Computer Science</p>
+            </div>
+
+            <nav className="flex-1">
+                <ul className="space-y-1">
+                    {navItems.map((item, index) => (
+                        <li key={index}>
+                            <Link 
+                                smooth 
+                                to={item.path} 
+                                onClick={() => window.innerWidth <= 1200 && showSideBar()}
+                                className="flex items-center gap-4 px-8 py-3 hover:bg-black/5 transition-colors border-l-4 border-transparent hover:border-black"
+                            >
+                                <span className="text-sm font-medium tracking-wide uppercase">{item.title}</span>
+                            </Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+
+            <footer className="px-8 pt-8 border-t border-black/10 text-[10px] opacity-40 uppercase tracking-widest">
+                <p>© 2026 Allard Quek</p>
+                <p>Built with Tailwind + Framer</p>
+            </footer>
+        </div>
+    );
 };
-
-const NavigationStyled = styled.nav`
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
-  height: 100%;
-  width: 100%;
-  border-right: 1px solid var(--border-color);
-
-  .myphoto {
-    width: 70%;
-    border-bottom: 1px solid var(--border-color);
-    text-align: center;
-    padding: 1rem 0;
-
-    img {
-      width: 80%;
-      border-radius: 50%;
-      border: 6px solid var(--border-color);
-    }
-  }
-
-  .nav-items {
-    width: 100%;
-    text-align: center;
-
-    .active-class {
-      background-color: var(--primary-color-light);
-      color: white;
-    }
-
-    li {
-      display: block;
-      a {
-        display: block;
-        padding: 0.5rem 0;
-        position: relative;
-        z-index: 10;
-        font-size: 1.1rem;
-        font-weight: 400;
-        letter-spacing: 1.2px;
-        justify-content: center;
-        align-items: center;
-
-        &:hover {
-          cursor: pointer;
-          color: var(--white-color);
-          transition: all 0s; // Don't want gradual change for text color
-        }
-
-        &::before {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 0;
-          height: 50%;
-          background-color: var(--primary-color);
-          transition: All 0.4s cubic-bezier(1, -0.03, 0.16, 0.91);
-          transform-origin: right;
-          opacity: 0.15;
-          z-index: -1;
-        }
-      }
-
-      a:hover::before {
-        width: 100%;
-        height: 100%;
-      }
-
-      .things {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: center;
-        align-items: center;
-        text-align: center;
-      }
-
-      span {
-        margin-right: 0.5rem;
-      }
-    }
-  }
-
-  footer {
-    border-top: 1px solid var(--border-color);
-    width: 100%;
-    p {
-      padding: 1.5rem 0;
-      font-size: 0.8rem;
-      /* display: block;  */
-      text-align: center;
-    }
-  }
-`;
 
 export default Navigation;
