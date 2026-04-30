@@ -2,7 +2,7 @@ import React from "react";
 
 const BioCluster = ({ personal, skills }) => {
   return (
-    <div className="w-[520px] bg-[#080808]/90 backdrop-blur-3xl border border-white/10 rounded-sm p-10 shadow-2xl">
+    <div className="w-full max-w-3xl bg-[#080808]/90 backdrop-blur-3xl border border-white/10 rounded-sm p-8 md:p-10">
       <div className="flex items-start justify-between mb-6">
         <div>
           <div className="font-mono text-[9px] uppercase tracking-[0.3em] text-[#0088FF]">BIO_CORE</div>
