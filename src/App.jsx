@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { SiGithub, SiYoutube, SiSubstack } from "react-icons/si";
-import { FaLinkedinIn, FaMediumM, FaEnvelope } from "react-icons/fa";
+import { FaLinkedinIn, FaMediumM, FaEnvelope, FaCheck } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import resumeData from "../docs/resume_data_2026.json";
@@ -12,6 +12,8 @@ import ResumeModal from "./components/ResumeModal";
 
 function SocialIcon({ href, icon: Icon, label, brandColor, email }) {
   const [hovered, setHovered] = useState(false);
+  const [copied, setCopied] = useState(false);
+
   const sharedProps = {
     "aria-label": label,
     onMouseEnter: () => setHovered(true),
@@ -19,18 +21,42 @@ function SocialIcon({ href, icon: Icon, label, brandColor, email }) {
     className: "rounded-full p-2 transition-colors duration-200 cursor-pointer",
     style: { color: hovered ? brandColor : "rgba(255,255,255,0.32)" },
   };
+
   if (email) {
+    const handleCopy = () => {
+      navigator.clipboard.writeText(email);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    };
     return (
-      <button
-        type="button"
-        onClick={() => navigator.clipboard.writeText(email)}
-        title={`Copy ${email}`}
-        {...sharedProps}
-      >
-        <Icon size={16} />
-      </button>
+      <div className="relative">
+        <button
+          type="button"
+          onClick={handleCopy}
+          aria-label={copied ? "Copied!" : `Copy ${email}`}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+          className="rounded-full p-2 transition-all duration-200 cursor-pointer"
+          style={{ color: copied ? "#0d9488" : hovered ? brandColor : "rgba(255,255,255,0.32)" }}
+        >
+          {copied ? <FaCheck size={16} /> : <Icon size={16} />}
+        </button>
+        {hovered && !copied && (
+          <div className="absolute top-full left-1/2 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1a2826] px-2.5 py-1 font-mono text-[10px] text-accent-muted shadow-lg ring-1 ring-accent/20 pointer-events-none">
+            <div className="absolute left-1/2 bottom-full -translate-x-1/2 border-4 border-transparent border-b-[#1a2826]" />
+            {email}
+          </div>
+        )}
+        {copied && (
+          <div className="absolute top-full left-1/2 mt-2 -translate-x-1/2 whitespace-nowrap rounded-md bg-[#1a2826] px-2.5 py-1 font-mono text-[10px] text-accent shadow-lg ring-1 ring-accent/30 pointer-events-none">
+            <div className="absolute left-1/2 bottom-full -translate-x-1/2 border-4 border-transparent border-b-[#1a2826]" />
+            Copied!
+          </div>
+        )}
+      </div>
     );
   }
+
   return (
     <a href={href} target="_blank" rel="noreferrer" {...sharedProps}>
       <Icon size={16} />
@@ -88,17 +114,18 @@ function App() {
         <meta name="description" content="Allard Quek — AI engineer at Singtel, productivity nerd, and builder based in Singapore." />
       </Helmet>
 
-      <div className="relative min-h-screen bg-background text-primary selection:bg-accent/30">
+      <div className="relative min-h-screen text-primary selection:bg-accent/30">
         <div
-          className="fixed inset-0 z-0 pointer-events-none opacity-75"
+          className="fixed inset-0 z-0 pointer-events-none"
           style={{
             backgroundImage: `
-              linear-gradient(to right, rgba(13,148,136,0.14) 1px, transparent 1px),
-              linear-gradient(to bottom, rgba(13,148,136,0.14) 1px, transparent 1px),
-              radial-gradient(circle at 20% 0%, rgba(13,148,136,0.18), transparent 35%),
-              radial-gradient(circle at 80% 10%, rgba(255,255,255,0.05), transparent 28%)
+              radial-gradient(circle, rgba(13,148,136,0.26) 1.5px, transparent 1.5px),
+              radial-gradient(circle at 20% 0%, rgba(13,148,136,0.11), transparent 35%),
+              radial-gradient(circle at 80% 10%, rgba(255,255,255,0.03), transparent 28%)
             `,
-            backgroundSize: "80px 80px, 80px 80px, 100% 100%, 100% 100%",
+            backgroundSize: "60px 60px, 100% 100%, 100% 100%",
+            maskImage: "linear-gradient(to bottom, black 25%, transparent 80%)",
+            WebkitMaskImage: "linear-gradient(to bottom, black 25%, transparent 80%)",
           }}
         />
 
