@@ -5,6 +5,8 @@
   --primary: #edf1ef;
   --secondary: #98a7a4;
   --background: #09100f;
+  --accent: #0d9488;
+  --accent-muted: #9be9df;
   --font-sans: "IBM Plex Sans", "Helvetica Neue", sans-serif;
   --font-mono: "IBM Plex Mono", "SFMono-Regular", monospace;
 }
@@ -12,9 +14,11 @@
 @theme {
   --font-sans: var(--font-sans);
   --font-mono: var(--font-mono);
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-background: var(--background);
+  --color-primary: #edf1ef;
+  --color-secondary: #98a7a4;
+  --color-background: #09100f;
+  --color-accent: #0d9488;
+  --color-accent-muted: #9be9df;
 }
 
 body {
@@ -40,5 +44,18 @@ html {
 
 code {
   font-family: var(--font-mono);
+}
+
+/* Accent left-rule — guaranteed fallback regardless of Tailwind JIT */
+.accent-rule {
+  border-left: 2px solid rgba(13, 148, 136, 0.6);
+}
+
+/* Hide scrollbars on tile interiors while keeping scroll functional */
+.overflow-y-auto::-webkit-scrollbar {
+  display: none;
+}
+.overflow-y-auto {
+  scrollbar-width: none;
 }
 
