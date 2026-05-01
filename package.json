@@ -4,23 +4,15 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.1",
-    "@mui/icons-material": "^9.0.0",
-    "@mui/material": "^9.0.0",
-    "@mui/styles": "^6.4.8",
     "@testing-library/react": "^16.3.2",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5",
-    "react-helmet": "^6.1.0",
     "react-helmet-async": "^3.0.0",
-    "react-player": "^3.4.0",
+    "react-icons": "^5.6.0",
     "react-router-dom": "^7.14.2",
-    "react-router-hash-link": "^2.4.3",
-    "react-tsparticles": "^2.12.2",
-    "styled-components": "^6.4.1",
-    "tsparticles": "^3.9.1",
-    "tss-react": "^4.9.20"
+    "tailwind-merge": "^3.5.0"
   },
   "scripts": {
     "predeploy": "bun run build",
@@ -44,10 +36,14 @@
     ]
   },
   "devDependencies": {
+    "@tailwindcss/vite": "^4.2.4",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.1",
+    "autoprefixer": "^10.5.0",
     "gh-pages": "^6.3.0",
+    "postcss": "^8.5.12",
+    "tailwindcss": "^4.2.4",
     "vite": "^8.0.10",
     "vite-plugin-svgr": "^5.2.0"
   }
