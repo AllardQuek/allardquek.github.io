@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { SiGithub, SiYoutube, SiSubstack } from "react-icons/si";
+import { FaLinkedinIn, FaMediumM, FaEnvelope } from "react-icons/fa";
 import { AnimatePresence, motion } from "framer-motion";
 import { Helmet, HelmetProvider } from "react-helmet-async";
 import resumeData from "../docs/resume_data_2026.json";
@@ -7,6 +9,34 @@ import Tile from "./components/Tile";
 import AboutCard from "./components/AboutCard";
 import CommandPalette from "./components/CommandPalette";
 import ResumeModal from "./components/ResumeModal";
+
+function SocialIcon({ href, icon: Icon, label, brandColor, email }) {
+  const [hovered, setHovered] = useState(false);
+  const sharedProps = {
+    "aria-label": label,
+    onMouseEnter: () => setHovered(true),
+    onMouseLeave: () => setHovered(false),
+    className: "rounded-full p-2 transition-colors duration-200 cursor-pointer",
+    style: { color: hovered ? brandColor : "rgba(255,255,255,0.32)" },
+  };
+  if (email) {
+    return (
+      <button
+        type="button"
+        onClick={() => navigator.clipboard.writeText(email)}
+        title={`Copy ${email}`}
+        {...sharedProps}
+      >
+        <Icon size={16} />
+      </button>
+    );
+  }
+  return (
+    <a href={href} target="_blank" rel="noreferrer" {...sharedProps}>
+      <Icon size={16} />
+    </a>
+  );
+}
 
 // Full-time + CTO roles only (Singtel, nextnanoGmbH, OneSanta)
 const experienceRows = resumeData.experience.slice(0, 3).map((job) => ({
@@ -43,9 +73,12 @@ function App() {
   }, [cmdOpen]);
 
   const socialLinks = [
-    { label: "GitHub", href: `https://github.com/${contact.github}` },
-    { label: "LinkedIn", href: `https://www.linkedin.com/in/${contact.linkedin}` },
-    { label: "Email", href: `mailto:${contact.email}` },
+    { label: "GitHub",   href: `https://github.com/${contact.github}`,              icon: SiGithub,   brandColor: "#e6edf3" },
+    { label: "LinkedIn", href: `https://www.linkedin.com/in/${contact.linkedin}`,    icon: FaLinkedinIn,  brandColor: "#0A66C2" },
+    { label: "YouTube",  href: `https://www.youtube.com/@${contact.youtube}`,        icon: SiYoutube,   brandColor: "#FF0000" },
+    { label: "Substack", href: `https://${contact.substack}.substack.com`,           icon: SiSubstack,  brandColor: "#FF6719" },
+    { label: "Medium",   href: `https://medium.com/@${contact.medium}`,              icon: FaMediumM,   brandColor: "#00AB6C" },
+    { label: "Email",    href: null,                                                  icon: FaEnvelope,  brandColor: "#0d9488", email: contact.email },
   ];
 
   return (
@@ -80,15 +113,7 @@ function App() {
             </div>
             <div className="flex items-center gap-2 sm:gap-3">
               {socialLinks.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  className="rounded-full border border-white/10 px-3 py-2 text-[11px] font-mono uppercase tracking-[0.2em] text-white/70 transition-colors hover:border-accent/60 hover:text-white"
-                  target={link.label === "Email" ? undefined : "_blank"}
-                  rel={link.label === "Email" ? undefined : "noreferrer"}
-                >
-                  {link.label}
-                </a>
+                <SocialIcon key={link.label} {...link} />
               ))}
               <button
                 type="button"
